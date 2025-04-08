@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LK Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Rajdhani:wght@400;500&family=Audiowide&family=Share+Tech+Mono&family=Syne:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module" src="./src/main.js"></script>
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+        }
+
+        #bg-canvas {
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <div class="navdrop">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">
+                    <img src="LK_logo_transparent_2.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-key="home">Home</a></li>
+                <li><a href="#about" data-key="about">About Me</a></li>
+                <li><a href="#projects" data-key="projects">Projects</a></li>
+                <li><a href="#contact" data-key="contact">Contact</a></li>
+            </ul>
+            <div>
+                <ul class="language-switcher">
+                    <li><img src="germany_icon.png" alt="Deutsch" id="de-flag" style="cursor: pointer;"></li>
+                    <li><img src="english_icon.png" alt="English" id="en-flag" style="cursor: pointer;"></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <header id="home" class="hero">
+        <h1 data-key="hero">Hi, I am <span class="highlight" data-key="hero">Lukas Maximilian Kodalle</span></h1>
+        <p data-key="hero">Aspiring Developer with Focus on AI | Love for Innovation | Creative Thinker</p>
+        <a href="#projects" class="btn" data-key="hero">My Projects</a>
+
+        <img src="wip.png" alt="WIP" class="wip-header">
+
+    </header>
+    <main>
+        <section id="about" class="about">
+            <div class="box">
+                <div class="backdropAbout">
+                    <h2 data-key="about">About Me</h2>
+                    <div class="about-text">
+                        <div class="intro-txt-img">
+                            <h3 data-key="intro" class="intro-headline">Intro</h3>
+                            <div class="intro-txt">
+                                <p data-key="about1">Hi, I’m Lukas — a curious explorer in the world of programming with
+                                    a
+                                    deep
+                                    fascination for technology and its impact on our future.
+                                    My journey began during my Media Conception studies, where I first got hands-on
+                                    experience
+                                    with
+                                    web
+                                    and game development, bringing ideas to life through code.
+                                    What started as an exciting challenge quickly turned into a true passion —
+                                    especially
+                                    for
+                                    artificial
+                                    intelligence.
+                                    Even before AI tools like ChatGPT became mainstream, I was captivated by the immense
+                                    potential
+                                    of
+                                    this technology.
+                                    But it’s not just the possibilities that intrigue me; it’s also the profound
+                                    philosophical
+                                    questions
+                                    that come with it.
+                                <div class="intro-img">
+                                    <img src="Portrait_BW.png" alt="Portrait" class="portrait">
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <h3 data-key="vision">Vision</h3>
+                        <p data-key="about2" class="about-vision">
+                            Today, I’m certain that I want to keep learning everything I can about this field to unlock
+                            endless
+                            opportunities for the future.
+                            For me, programming isn’t just a technical skill — it’s a powerful tool that can be used for
+                            great
+                            good
+                            or, unfortunately, for harm.
+                            My ultimate goal is to use my skills to drive innovation in areas like healthcare, security,
+                            and
+                            space exploration.
+                        </p>
+
+                        <h3 data-key="strengths">Strengths</h3>
+                        <p data-key="about3">
+                            Along the way, I benefit not only from my technical knowledge but also from my
+                            interdisciplinary
+                            background.
+                            While I may still lack deep IT expertise due to my Media Conception studies, I see this as a
+                            strength.
+                            My ability to think beyond the boundaries of technology helps me approach complex problems
+                            from
+                            a
+                            broader perspective.
+                            My experience in UX/UI design, web analytics, marketing, and project planning translates
+                            seamlessly
+                            into
+                            the IT and coding world.
+                            It allows me to not only implement projects technically but also consider the user
+                            perspective
+                            and
+                            strategic planning.
+                        </p>
+
+                        <h3 data-key="skills">Skills</h3>
+                        <p data-key="about4">
+                            Of course, I’m still at the beginning of my journey, but I’ve already gained valuable
+                            experience.
+                            During my studies, I worked on early projects using TypeScript, JavaScript, HTML, and CSS.
+                            As my interest in machine learning grew, I started (just recently) experimenting with Python
+                            and
+                            developed small
+                            applications.
+                            I also had the chance to work with exciting libraries and tools such as Three.js, GSAP,
+                            PixiJS,
+                            Pygame, MongoDB
+                            and the open-source game engine FUDGE (Furtwangen University Didactic Game Editor).
+                            Every new project and every challenge shows me how limitless the possibilities
+                            truly
+                            are.
+                        </p>
+
+                        <h3 data-key="motivation">Motivation</h3>
+                        <p data-key="about5">
+                            I firmly believe that the journey is the reward — and I’m excited to keep learning and
+                            growing.
+                            What
+                            drives me most is the idea that technology can be a force for positive change, solving
+                            real-world
+                            problems and pushing the boundaries of what’s possible. I want to develop solutions that not
+                            only
+                            advance industries but also improve lives. Whether it’s making healthcare more accessible,
+                            enhancing
+                            digital & physical security, or contributing to the exploration of the unknown, I see
+                            programming as
+                            a way to build
+                            a better future. The more I learn, the more I realize how much there is still to discover —
+                            and
+                            that’s
+                            exciting!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="projects">
+            <div class="box">
+                <h2 data-key="projects" id="project-headline">My Projects</h2>
+                <div id="project-wip">
+                    <p class="wip" data-key="wipproject">(Only Pictures +
+                        Link to Code)
+                    </p>
+                    <img src="wip.png" alt="WIP" class="wip-logo">
+                </div>
+
+                <div id="project-overview" class="project-overview">
+                    <div class="project-card" data-project="snake" data-title="Snake Game"
+                        data-description="You control the iconic green snake, slithering through a neon-drenched arena filled with treacherous obstacles. But beware – you're not alone. Enter the Bots: unpredictable red snakes with a taste for trouble. They change direction randomly, roam the grid like digital predators, and if they collide with you... it’s lights out. - More Details and Functions coming Soon&#8482; Code on GitHub."
+                        data-images="/snake_project/bild1.png,/snake_project/bild2.png,/snake_project/bild3.png"
+                        data-link="https://github.com/LMKCode/Snake-Game">
+                        <h3 data-key="project1">Snake Game</h3>
+                        <img src="/snake_project/snake_thumb.png" alt="Snake Game Thumbnail">
+                    </div>
+                    <div class="project-card" data-project="fish" data-title="Fish Sidescroller"
+                        data-description="You control a colorful Fish in a sea of colorless and therefore envious Fish that will hunt and try to eat you - Unless you become bigger yourself, because then the tables turn in your favor! - More Details and Functions coming Soon&#8482;. Concept & Code on GitHub."
+                        data-images="/fish_sidescroller/bild1.png,/fish_sidescroller/bild2.png,/fish_sidescroller/bild3.png,/fish_sidescroller/bild4.png"
+                        data-link="https://github.com/LMKCode/Fish-Sidescroller">
+                        <h3 data-key="project2">Fish Sidescroller</h3>
+                        <img src="/fish_sidescroller/fish_thumb.png" alt="Fish Sidescroller Thumbnail">
+                    </div>
+                    <div class="project-card" data-project="visualnovel" data-title="Visual Novel"
+                        data-description="An interactive point & click Novel with RPG, puzzle and combat elements. Find, examine, use and combine Items to advance in the story. Level your character and equip stronger gear to defeat all enemies standing in your way. Some elements in the game are randomized - so every new playthrough is a little different. - More Details and Functions coming Soon&#8482;. Look it up on GitHub."
+                        data-images="/visualnovel_project/bild1.png,/visualnovel_project/bild2.png,/visualnovel_project/bild3.png,/visualnovel_project/bild4.png,/visualnovel_project/bild5.png,/visualnovel_project/bild6.png,/visualnovel_project/bild7.png,/visualnovel_project/bild8.png"
+                        data-link="https://github.com/LMKCode/Visual-Novel">
+                        <h3 data-key="project3">Visual Novel</h3>
+                        <img src="/visualnovel_project/vn_thumb.png" alt="Visual Novel Thumbnail">
+                    </div>
+                    <div class="project-card" data-project="fudge" data-title="FUDGE Game Test"
+                        data-description="Basically a Playground where I started experimenting with programming Player Controls, Enemy AI, Generating Levels, Items and overall practice OOP. More Details and Functions coming Soon&#8482;."
+                        data-images="/fudge_project/bild1.png,/fudge_project/bild2.png,./fudge_project/bild3.png,/fudge_project/bild4.png,/fudge_project/bild5.png,/fudge_project/bild6.png,/fudge_project/bild7.png"
+                        data-link="https://github.com/LMKCode/FUDGE-Playground">
+                        <h3 data-key="project4">FUDGE Game Test</h3>
+                        <img src="/fudge_project/fudge_thumb.png" alt="FUDGE Game Test Thumbnail">
+                    </div>
+                </div>
+
+                <!-- Detailansicht mit Carousel -->
+                <div id="project-detail" class="project-detail" style="display: none;">
+                    <button id="back-to-overview" class="btn" data-key="overview">Back to Overview</button>
+                    <h2 id="detail-title"></h2>
+                    <button class="btn-purple"><a href="https://github.com/LMKCode?tab=repositories" id="detail-link"
+                            target="_blank" rel="noopener noreferrer"><img src="github.png" alt="GitHub" width="30"
+                                height="30"></a></button>
+
+                    <p id="detail-description"></p>
+
+                    <div class="carousel-detail">
+                        <div class="image-container">
+                            <div class="carousel-overlay left-overlay">
+                                <span class="arrow" id="arrowLeft">&lsaquo;</span>
+                            </div>
+                            <div class="carousel-overlay right-overlay">
+                                <span class="arrow" id="arrowRight">&rsaquo;</span>
+                            </div>
+                            <div class="carousel-wrapper-detail">
+                                <!-- Bilder werden dynamisch eingefügt -->
+                            </div>
+                        </div>
+                        <div class="slide-indicator" id="slide-indicator">Bild 1 von X</div>
+                        <div class="thumbnail-overview" id="thumbnail-overview"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="contact">
+            <div class="box">
+                <div class="backdropContact">
+                    <h2 data-key="contact">Contact</h2>
+                    <p class="wip" data-key="wipcontact">(No Social
+                        Media Channels created yet)
+                    </p>
+                    <img src="wip.png" alt="WIP" class="wip-logo">
+                    <p data-key="contact">Please send me a Message with Questions and Feedback or visit me on Social
+                        Media.
+                    </p>
+
+                    <form action="https://formspree.io/f/xeoarjew" method="POST" class="contact-form" novalidate>
+                        <div class="name-fields">
+                            <div class="form-group">
+                                <label for="name" data-key="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="surname" data-key="surname">Surname</label>
+                                <input type="text" id="surname" name="surname" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-key="email">E-Mail Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="textarea">
+                            <div class="form-group">
+                                <label for="message" data-key="message">Your Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="error-message"></span>
+                            </div>
+                            <p class="privacy-hint" data-key="privacy">
+                                By submitting this form you agree to the <a href="privacy.html">Privacy Policy</a>.
+                            </p>
+                            <button type="submit" class="btn" data-key="contact">Submit</button>
+                        </div>
+                    </form>
+
+                    <div id="success" class="success" style="display: none;">
+                        <div class="check">&#10004;</div>
+                        <p data-key="success">Thank you! Your message has been sent successfully.</p>
+                    </div>
+                    <button id="back" style="display: none; margin: auto;" class="btn" data-key="back">New
+                        Message</button>
+
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/COMING-SOON" target="_blank" aria-label="Instagram">
+                            <img src="instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.tiktok.com/COMING-SOON" target="_blank" aria-label="TikTok">
+                            <img src="tiktok_webP.webp" alt="TikTok">
+                        </a>
+                        <a href="https://www.youtube.com/COMING-SOON" target="_blank" aria-label="YouTube">
+                            <img src="youtube.png" alt="YouTube">
+                        </a>
+                        <a href="https://www.xing.com/COMING-SOON" target="_blank" aria-label="Xing">
+                            <img src="xing.png" alt="Xing">
+                        </a>
+                        <a href="https://www.linkedin.com/COMING-SOON" target="_blank" aria-label="LinkedIn">
+                            <img src="linkedin.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p data-key="copy">&copy; 2025 Lukas Maximilian Kodalle</p>
+            <ul class="footer-list">
+                <li><a href="privacy.html" data-key="privacy">Privacy Policy</a></li>
+                <li><a href="imprint.html" data-key="imprint">Imprint</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>

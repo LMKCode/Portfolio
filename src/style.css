@@ -1,0 +1,796 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+
+.box {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  z-index: -10;
+  padding: 2vh 2vw
+}
+
+.logo {
+  height: 20vh;
+  align-items: center;
+  display: flex;
+}
+
+.logo img {
+  height: 10vh;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh;
+  position: fixed;
+  width: 100%;
+  height: 12vh;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  font-size: 1.35rem;
+  flex: auto;
+}
+
+.nav-links li {
+  margin: 0 2vw;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  transition: text-shadow 0.3 ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #00FFC6;
+  text-shadow: 0 0 15px rgba(0, 255, 198, 0.8);
+}
+
+.language-switcher {
+  list-style: none;
+}
+
+.social-icons {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  flex-wrap: wrap;
+}
+
+.social-icons a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2vh;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.highlight {
+  color: #00FFC6;
+}
+
+.wip {
+  color: red;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.wip-header {
+  position: relative;
+  width: 15vh;
+  height: 15vh;
+  margin-top: 4vh;
+}
+
+.wip-logo {
+  position: relative;
+  width: 15vh;
+  height: 15vh;
+  display: flex;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1vh 2vw;
+  background: #00FFC6;
+  color: #0D0D0D;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease-out;
+  font-family: 'Share Tech Mono', monospace;
+  box-shadow: 0 0px 20px rgba(0, 255, 198, 0.5);
+}
+
+.btn-purple {
+  display: inline-block;
+  padding: 1vh 2vw;
+  background: rgba(255, 0, 198, 1);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease-out;
+  font-family: 'Share Tech Mono', monospace;
+  box-shadow: 0 0px 30px rgba(255, 0, 198, 0.75);
+  min-width: 100px;
+}
+
+.btn:hover {
+  background-color: white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.btn-purple:hover {
+  background-color: white;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.75);
+}
+
+section p {
+  margin-bottom: 2vh;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+section {
+  text-align: center;
+  padding: 15vh 5vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 2vh;
+  color: #00FFC6
+}
+
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+}
+
+.portrait {
+  width: 350px;
+  height: auto;
+  margin-left: 5vh;
+  border: 5px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin-left: 3vw;
+  float: right;
+}
+
+.about-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+.project-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2vh 2vw;
+}
+
+.project-card {
+  background: #1A1A1A;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 3px solid white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.project-card:hover {
+  border: 3px solid rgba(0, 255, 198, 1);
+  box-shadow: 0 0 30px rgba(0, 255, 198, 0.5);
+  background-color: rgba(0, 255, 198, 0.2);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.project-detail {
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2vh auto;
+  max-width: 800px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* Carousel innerhalb der Detailansicht */
+#back-to-overview {
+  margin-bottom: 5vh;
+  font-size: 1.5rem;
+}
+
+#detail-title {
+  font-size: 4.5rem;
+}
+
+#detail-link {
+  color: #0D0D0D;
+  text-decoration: none;
+}
+
+#detail-description {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.25rem;
+  padding-top: 5vh;
+  text-align: justify;
+}
+
+.carousel-detail {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  display: block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.carousel-wrapper-detail {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-wrapper-detail img {
+  min-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.0);
+}
+
+.left-overlay {
+  left: 0;
+}
+
+.right-overlay {
+  right: 0;
+
+}
+
+.carousel-overlay:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.arrow {
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.2);
+  user-select: none;
+}
+
+/* Slide Indicator */
+.slide-indicator {
+  font-family: 'Share Tech Mono', monospace;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+/* Thumbnail Übersicht */
+.thumbnail-overview {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 10px;
+}
+
+.thumbnail-overview img {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 3px solid transparent;
+  border-radius: 2px;
+  transition: opacity 0.3s ease, border 0.3s ease;
+}
+
+.thumbnail-overview img.active {
+  opacity: 1;
+  border: 3px solid #00FFC6;
+  box-shadow: 0 0 15px rgba(0, 255, 198, 0.5);
+}
+
+/* Kontakt */
+.contact {
+  padding: 8vh 5vw;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(2vh);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Aktiver Link in der Navigation */
+.nav-links a.active {
+  color: #00FFC6;
+  text-shadow: 0 0 15px rgba(0, 255, 198, 0.8);
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Kontaktformular */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 600px;
+  margin: auto;
+}
+
+.name-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.25rem;
+}
+
+input,
+textarea {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  padding: 0.3em 0em 0.3em 0.75em;
+  border-radius: 2px;
+  border: 3px solid white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transition: border 0.3s ease;
+  background-color: rgba(0, 255, 198, 0.1);
+  color: white;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background-color: rgba(0, 255, 198, 0.2);
+}
+
+.form-group:focus-within label {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+input.valid,
+textarea.valid {
+  border-color: rgba(0, 255, 198, 1);
+  box-shadow: 0 0 15px rgba(0, 255, 198, 0.5);
+}
+
+
+input.invalid,
+textarea.invalid {
+  border-color: red;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.error-message {
+  font-family: 'Share Tech Mono', monospace;
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.2em;
+  height: 1em;
+}
+
+.success-message {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+  color: #155724;
+  padding: 2em 1em;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.check {
+  font-size: 3em;
+  color: rgba(0, 255, 198, 1);
+  margin-bottom: 0.5em;
+  animation: pop 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.backdropAbout {
+  width: auto;
+  height: auto;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('/backgrounds/backdrop_3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  overflow: hidden;
+  padding: 3vh;
+}
+
+.backdropContact {
+  width: auto;
+  height: auto;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/backgrounds/backdrop_1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 1;
+}
+
+button {
+  border: none;
+  align-self: center;
+  cursor: pointer;
+}
+
+.privacy-hint {
+  font-family: 'Rajdhani', sans-serif;
+  padding-top: 1.75vh;
+}
+
+.privacy-hint a {
+  text-decoration: none;
+  color: rgba(0, 255, 198, 1);
+  text-shadow: 0 0 15px rgba(0, 255, 198, 0.8);
+  transition: text-shadow 0.3 ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.privacy-hint a:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  color: white;
+}
+
+/* Footer */
+footer {
+  font-family: 'Rajdhani', sans-serif;
+  position: relative;
+  text-align: center;
+  display: flex;
+  z-index: 1000;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+}
+
+.footer p {
+  padding-top: 1vh;
+  font-size: 1.15rem;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding-bottom: 1vh;
+}
+
+.footer li {
+  list-style: none;
+  font-size: smaller;
+  font-size: 1rem;
+}
+
+.footer li a {
+  text-decoration: none;
+  color: rgba(0, 255, 198, 1);
+  text-shadow: 0 0 15px rgba(0, 255, 198, 0.8);
+  transition: text-shadow 0.3 ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer li a:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  /* Allgemeine Anpassungen */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Navigation */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: auto;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* Desktop-Logo ausblenden – alternativ kann ein kleineres Logo angezeigt werden */
+  .logo {
+    display: none;
+  }
+
+  /* Hamburger-Menü anzeigen */
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  /* Navigation als Dropdown (standardmäßig ausgeblendet, über JavaScript mit .open einblendbar) */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Anpassungen im Hero-Bereich */
+  .hero {
+    padding: 5rem 1rem;
+    /* Mehr Innenabstand für ein zentriertes Layout */
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Projekte – Karten untereinander anordnen */
+  .project-overview {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /* Container der Detailansicht */
+  .project-detail {
+    width: 90%;
+    max-width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: 0.9rem;
+    box-shadow: none;
+    /* Optional: Leichtere Darstellung */
+  }
+
+  /* Detail-Überschrift anpassen */
+  #detail-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Beschreibung anpassen */
+  #detail-description {
+    font-size: 1rem;
+    padding: 1vh;
+    margin-bottom: 1rem;
+  }
+
+  /* Carousel-Bereich */
+  .carousel-detail {
+    width: 100%;
+    /* Falls erforderlich, kannst du hier auch overflow-x: auto; setzen, damit bei zu breiten Bildern ein Scrollen möglich ist */
+  }
+
+  /* Carousel-Bilder anpassen */
+  .carousel-wrapper-detail img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Pfeile im Carousel verkleinern */
+  .carousel-overlay .arrow {
+    font-size: 3rem;
+  }
+
+  /* Slide-Indikator kleiner */
+  .slide-indicator {
+    font-size: 1rem;
+  }
+
+  /* Thumbnail Übersicht anpassen */
+  .thumbnail-overview img {
+    width: 60px;
+    height: auto;
+  }
+
+  /* Buttons in der Detailansicht ggf. anpassen */
+  .btn-purple img {
+    width: 20px;
+    height: auto;
+  }
+
+  .btn-purple {
+    padding: 1vh;
+    margin: 10px;
+  }
+
+  /* Allgemeine Sections etwas kompakter gestalten */
+  section {
+    padding: 3rem 2vw;
+  }
+
+  /* Kontaktformular anpassen */
+  .contact-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    /* Falls nötig, kann hier auch das Padding weiter reduziert werden */
+  }
+
+  /* Footer-Texte leicht verkleinern */
+  footer p,
+  .footer li {
+    font-size: 0.9rem;
+  }
+}
