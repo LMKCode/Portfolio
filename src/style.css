@@ -11,11 +11,12 @@ body {
   line-height: 1.6;
 }
 
+
 .box {
   background: rgba(0, 0, 0, 0.8);
-  border-radius: 1rem;
+  border-radius: 2rem;
   z-index: -10;
-  padding: 2vh 2vw
+  padding: 1vh;
 }
 
 .logo {
@@ -200,15 +201,18 @@ h3 {
   font-size: 2rem;
 }
 
+.about h3 {
+  color: rgba(255, 0, 198, 1);
+  text-shadow: 0 0 15px rgba(255, 0, 198, 0.5);
+}
+
 .portrait {
-  width: 350px;
+  width: 300px;
   height: auto;
-  margin-left: 5vh;
-  border: 5px solid rgba(255, 255, 255, 1);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  margin-left: 3vw;
   float: right;
+  margin-left: 2vw;
+  margin-bottom: 2vh;
+  border-radius: 10px;
 }
 
 .about-text {
@@ -236,8 +240,7 @@ h3 {
 }
 
 .project-card:hover {
-  border: 3px solid rgba(0, 255, 198, 1);
-  box-shadow: 0 0 30px rgba(0, 255, 198, 0.5);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
@@ -248,16 +251,14 @@ h3 {
 }
 
 .project-detail {
-  padding: 2rem;
   border-radius: 1rem;
-  margin: 2vh auto;
-  max-width: 800px;
+  max-width: 1028px;
   text-align: center;
   color: #FFFFFF;
 }
 
-/* Carousel innerhalb der Detailansicht */
 #back-to-overview {
+  margin-top: 2vh;
   margin-bottom: 5vh;
   font-size: 1.5rem;
 }
@@ -276,6 +277,7 @@ h3 {
   font-size: 1.25rem;
   padding-top: 5vh;
   text-align: justify;
+  padding: 3vh;
 }
 
 .carousel-detail {
@@ -294,6 +296,7 @@ h3 {
   height: auto;
   object-fit: contain;
   object-position: center;
+  padding: 3vh
 }
 
 .carousel-wrapper-detail {
@@ -352,7 +355,6 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 10px;
 }
 
 .thumbnail-overview img {
@@ -363,6 +365,7 @@ h3 {
   border: 3px solid transparent;
   border-radius: 2px;
   transition: opacity 0.3s ease, border 0.3s ease;
+  margin-bottom: 5vh;
 }
 
 .thumbnail-overview img.active {
@@ -525,7 +528,7 @@ textarea.invalid {
   height: auto;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url('/backgrounds/backdrop_3.png');
+    url('/Portfolio/backgrounds/backdrop_3.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -534,14 +537,15 @@ textarea.invalid {
   z-index: -1;
   overflow: hidden;
   padding: 3vh;
+  border-radius: 2rem;
 }
 
-.backdropContact {
+.backdropProject {
   width: auto;
   height: auto;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('/backgrounds/backdrop_1.png');
+    url('/Portfolio/backgrounds/backdrop_2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -549,7 +553,39 @@ textarea.invalid {
   align-items: center;
   z-index: -1;
   overflow: hidden;
-  opacity: 1;
+  border-radius: 2rem;
+}
+
+.backdropDetail {
+  width: auto;
+  height: auto;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/Portfolio/backgrounds/backdrop_4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.backdropContact {
+  width: auto;
+  height: auto;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/Portfolio/backgrounds/backdrop_1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  overflow: hidden;
+  padding: 3vh;
+  border-radius: 2rem;
 }
 
 button {
@@ -642,6 +678,10 @@ footer {
     z-index: 1000;
   }
 
+  .box {
+    padding: 1vh;
+  }
+
   .logo {
     display: none;
   }
@@ -694,7 +734,10 @@ footer {
   }
 
   .portrait {
-    margin: 2vh;
+    display: flex;
+    float: none;
+    margin: auto;
+    margin-bottom: 2vh;
   }
 
   .project-overview {
