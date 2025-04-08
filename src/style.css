@@ -238,7 +238,6 @@ h3 {
 .project-card:hover {
   border: 3px solid rgba(0, 255, 198, 1);
   box-shadow: 0 0 30px rgba(0, 255, 198, 0.5);
-  background-color: rgba(0, 255, 198, 0.2);
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
@@ -625,13 +624,11 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
 
-  /* Allgemeine Anpassungen */
   body {
     font-size: 16px;
     line-height: 1.5;
   }
 
-  /* Navigation */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -645,12 +642,10 @@ footer {
     z-index: 1000;
   }
 
-  /* Desktop-Logo ausblenden – alternativ kann ein kleineres Logo angezeigt werden */
   .logo {
     display: none;
   }
 
-  /* Hamburger-Menü anzeigen */
   .menu-toggle {
     display: block;
     font-size: 1.8rem;
@@ -658,7 +653,6 @@ footer {
     cursor: pointer;
   }
 
-  /* Navigation als Dropdown (standardmäßig ausgeblendet, über JavaScript mit .open einblendbar) */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -684,10 +678,8 @@ footer {
     padding: 0.5rem 1rem;
   }
 
-  /* Anpassungen im Hero-Bereich */
   .hero {
     padding: 5rem 1rem;
-    /* Mehr Innenabstand für ein zentriertes Layout */
     text-align: center;
   }
 
@@ -698,17 +690,19 @@ footer {
 
   .hero p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: -2vh;
   }
 
-  /* Projekte – Karten untereinander anordnen */
+  .portrait {
+    margin: 2vh;
+  }
+
   .project-overview {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
   }
 
-  /* Container der Detailansicht */
   .project-detail {
     width: 90%;
     max-width: 95%;
@@ -716,51 +710,41 @@ footer {
     padding: 1rem;
     font-size: 0.9rem;
     box-shadow: none;
-    /* Optional: Leichtere Darstellung */
   }
 
-  /* Detail-Überschrift anpassen */
   #detail-title {
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
 
-  /* Beschreibung anpassen */
   #detail-description {
     font-size: 1rem;
     padding: 1vh;
     margin-bottom: 1rem;
   }
 
-  /* Carousel-Bereich */
   .carousel-detail {
     width: 100%;
-    /* Falls erforderlich, kannst du hier auch overflow-x: auto; setzen, damit bei zu breiten Bildern ein Scrollen möglich ist */
   }
 
-  /* Carousel-Bilder anpassen */
   .carousel-wrapper-detail img {
     width: 100%;
     height: auto;
   }
 
-  /* Pfeile im Carousel verkleinern */
   .carousel-overlay .arrow {
     font-size: 3rem;
   }
 
-  /* Slide-Indikator kleiner */
   .slide-indicator {
     font-size: 1rem;
   }
 
-  /* Thumbnail Übersicht anpassen */
   .thumbnail-overview img {
     width: 60px;
     height: auto;
   }
 
-  /* Buttons in der Detailansicht ggf. anpassen */
   .btn-purple img {
     width: 20px;
     height: auto;
@@ -771,12 +755,10 @@ footer {
     margin: 10px;
   }
 
-  /* Allgemeine Sections etwas kompakter gestalten */
   section {
     padding: 3rem 2vw;
   }
 
-  /* Kontaktformular anpassen */
   .contact-form {
     width: 90%;
     margin: 0 auto;
@@ -785,10 +767,8 @@ footer {
   input,
   textarea {
     width: 100%;
-    /* Falls nötig, kann hier auch das Padding weiter reduziert werden */
   }
 
-  /* Footer-Texte leicht verkleinern */
   footer p,
   .footer li {
     font-size: 0.9rem;

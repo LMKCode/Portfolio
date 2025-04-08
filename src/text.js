@@ -1,10 +1,10 @@
 // Text for the Portfolio
 export const h1 = {
     en: {
-        hero: "Hi I am, ",
+        hero: "Hi, I'm ",
     },
     de: {
-        hero: "Hi ich bin, "
+        hero: "Hi, ich bin "
     }   
 }
 export const h2 = {
