@@ -30,6 +30,8 @@ export const h3 = {
         project2: "Fish Sidescroller",
         project3: "Visual Novel",
         project4: "FUDGE Game Test",
+        project5: "In Work: App Data Analysis",
+        project6: "In Work: AI Chatbot"
     },
     de: {
         intro: "Einleitung",
@@ -38,9 +40,11 @@ export const h3 = {
         skills: "Fähigkeiten",
         motivation: "Motivation",
         project1: "Snake Spiel",
-        project2: "Fisch Sidescroller",
+        project2: "Fisch Seitenscroller",
         project3: "Visueller Roman",
         project4: "FUDGE Spiel Test",
+        project5: "In Arbeit: App Datenanalyse",
+        project6: "In Arbeit: KI Chatbot"
     }
 }
 export const btn = {

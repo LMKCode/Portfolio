@@ -349,8 +349,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
 
-      const title = card.getAttribute('data-title');
-      const description = card.getAttribute('data-description');
+      var title
+      var description
+      if (currentLanguage == "en") {
+        title = card.getAttribute('data-title-en');
+      } else title = card.getAttribute('data-title-de');
+      if (currentLanguage == "en") {
+        description = card.getAttribute('data-description-en');
+      } else description = card.getAttribute('data-description-de');
       const imagesData = card.getAttribute('data-images');
       const images = imagesData.split(',').map(src => src.trim());
       const link = card.getAttribute('data-link');
@@ -475,7 +481,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const arrowRight = document.getElementById('arrowRight')
 
   overlayLeft.addEventListener('mouseenter', () => {
-    arrowLeft.style.color = 'rgba(0, 255, 198, 1)';
     arrowLeft.style.textShadow = '0 0 15px rgba(0, 255, 198, 0.5)';
   });
 
@@ -485,7 +490,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   overlayRight.addEventListener('mouseenter', () => {
-    arrowRight.style.color = 'rgba(0, 255, 198, 1)';
     arrowRight.style.textShadow = '0 0 15px rgba(0, 255, 198, 0.5)';
   });
 
