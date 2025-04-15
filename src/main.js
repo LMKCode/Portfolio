@@ -71,7 +71,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setClearColor(0x0d0d0d, 0);
 
-const particleCount = 200;
+const particleCount = 500;
 const particleGeometry = new THREE.SphereGeometry(0.05, 8, 8);
 const particleMaterial = new THREE.MeshStandardMaterial({
   color: 0xCF9FFF,
@@ -79,7 +79,7 @@ const particleMaterial = new THREE.MeshStandardMaterial({
   opacity: 1,
   blending: THREE.AdditiveBlending,
   emissive: 0xCF9FFF,
-  emissiveIntensity: 10,
+  emissiveIntensity: 100,
 });
 const particlesInstanced = new THREE.InstancedMesh(particleGeometry, particleMaterial, particleCount);
 scene.add(particlesInstanced);
@@ -89,8 +89,8 @@ const particleVelocities = [];
 const dummy = new THREE.Object3D();
 
 for (let i = 0; i < particleCount; i++) {
-  const x = (Math.random() - 0.5) * 40;
-  const y = (Math.random() - 0.5) * 40;
+  const x = (Math.random() - 0.5) * 60;
+  const y = (Math.random() - 0.5) * 50;
   const z = -10 + Math.random() * 15;
   particlePositions.push({ x, y, z });
   const vx = (Math.random() - 0.5) * 0.002;
@@ -137,25 +137,56 @@ function spawnWireframeShape() {
   occupiedSpawnPoints[spawnIndex] = true;
 
   let geometry;
-  if (Math.random() < 0.5) {
-    geometry = new THREE.BoxGeometry(1, 1, 1);
-  } else {
-    geometry = new THREE.OctahedronGeometry(1, 0);
+  const shapeType = Math.floor(Math.random() * 4);
+
+  switch (shapeType) {
+    case 0: // Sphere
+      geometry = new THREE.SphereGeometry(
+        1,
+        8 + Math.floor(Math.random() * 8),
+        8 + Math.floor(Math.random() * 8)
+      );
+      break;
+    case 1: // Icosahedron
+      geometry = new THREE.IcosahedronGeometry(
+        1,
+        Math.floor(Math.random() * 2)
+      );
+      break;
+    case 2: // Torus
+      geometry = new THREE.TorusGeometry(
+        1,
+        0.1 + Math.random() * 0.2,
+        8 + Math.floor(Math.random() * 8),
+        12 + Math.floor(Math.random() * 12)
+      );
+      break;
+    case 3: // Torus Knot
+      geometry = new THREE.TorusKnotGeometry(
+        1,
+        0.08 + Math.random() * 0.15,
+        60 + Math.floor(Math.random() * 20),
+        8 + Math.floor(Math.random() * 4)
+      );
+      break;
   }
 
+  const hue = Math.random() * 0.6 + 0.5;
+  const color = new THREE.Color().setHSL(hue, 1, 0.5);
+
   const material = new THREE.MeshStandardMaterial({
-    color: 0x00ffc6,
+    color: color,
     wireframe: true,
     transparent: true,
     opacity: 1,
-    emissive: 0x00ffc6,
-    emissiveIntensity: 30
+    emissive: color,
+    emissiveIntensity: 10
   });
-  const mesh = new THREE.Mesh(geometry, material);
 
+  const mesh = new THREE.Mesh(geometry, material);
   mesh.position.copy(spawnPoints[spawnIndex]);
 
-  const scale = 5 + Math.random() * 3;
+  const scale = 3 + Math.random() * 5;
   mesh.scale.set(scale, scale, scale);
 
   const velocity = new THREE.Vector3(
@@ -252,7 +283,12 @@ window.addEventListener('resize', () => {
 });
 
 // MAIN
-let currentLanguage = 'en';
+var currentLanguage = 'en';
+var current_card;
+var title;
+var description;
+var is_detail = false;
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".contact-form");
   const inputs = form.querySelectorAll("input, textarea");
@@ -349,8 +385,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
 
-      var title
-      var description
+      current_card = card;
+      is_detail = true;
       if (currentLanguage == "en") {
         title = card.getAttribute('data-title-en');
       } else title = card.getAttribute('data-title-de');
@@ -410,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity: 0,
         duration: 0.5,
         onComplete: () => {
-          gsap.delayedCall(0.1, () => {
+          gsap.delayedCall(2, () => {
             ScrollTrigger.refresh();
           });
           document.getElementById("project-wip").style.display = "none"; // Can be deleted soon 
@@ -424,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const projectDetail = document.getElementById('back-to-overview');
       setTimeout(() => {
         projectDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 1000);
+      }, 2000);
     });
   });
 
@@ -458,11 +494,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.getElementById('back-to-overview').addEventListener('click', () => {
+    is_detail = false;
     gsap.to("#project-detail", {
       opacity: 0,
       duration: 0.5,
       onComplete: () => {
-        gsap.delayedCall(0.1, () => {
+        gsap.delayedCall(0.5, () => {
           ScrollTrigger.refresh();
         });
         document.getElementById("project-wip").style.display = "block"; // Can be deleted soon 
@@ -526,14 +563,30 @@ const translationP = text.p;
 const translationBtn = text.btn;
 const translationLabel = text.label;
 
+function updateDetailLanguage() {
+  if (is_detail) {
+    if (currentLanguage == "en") {
+      document.getElementById('detail-title').innerText = current_card.getAttribute('data-title-en');
+      document.getElementById('detail-description').innerText = current_card.getAttribute('data-description-en');
+    } else {
+      document.getElementById('detail-title').innerText = current_card.getAttribute('data-title-de');
+      document.getElementById('detail-description').innerText = current_card.getAttribute('data-description-de');
+    }
+    console.log("Works")
+  }
+  console.log(is_detail)
+}
+
 document.getElementById('de-flag').addEventListener('click', () => {
   currentLanguage = 'de';
   updateLanguage();
+  updateDetailLanguage();
 });
 
 document.getElementById('en-flag').addEventListener('click', () => {
   currentLanguage = 'en';
   updateLanguage();
+  updateDetailLanguage();
 });
 
 function updateLanguage() {
@@ -679,12 +732,13 @@ gsap.utils.toArray("section").forEach(section => {
       opacity: 1,
       filter: "blur(0px)",
       duration: 1,
-      immediateRender: false,
+      immediateRender: true,
       scrollTrigger: {
         trigger: section,
         start: "top 80%",
         end: "bottom 20%",
-        toggleActions: "play reverse play reverse"
+        toggleActions: "play reverse play reverse",
+        markers: true
       }
     }
   );
