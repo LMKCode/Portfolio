@@ -738,7 +738,7 @@ gsap.utils.toArray("section").forEach(section => {
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play reverse play reverse",
-        markers: true
+        markers: false
       }
     }
   );
