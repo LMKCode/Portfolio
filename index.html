@@ -30,8 +30,8 @@
             z-index: 0;
         }
     </style>
-  <script type="module" crossorigin src="/Portfolio/assets/index-DhuhB-70.js"></script>
-  <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-Dy3diqk2.css">
+  <script type="module" crossorigin src="/Portfolio/assets/index-HzERpQDE.js"></script>
+  <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-D60lQRqT.css">
 </head>
 
 <body>
@@ -49,6 +49,7 @@
                 <li><a href="#home" data-key="home">Home</a></li>
                 <li><a href="#about" data-key="about">About Me</a></li>
                 <li><a href="#projects" data-key="projects">Projects</a></li>
+                <li><a href="#blog" data-key="blog">Blog</a></li>
                 <li><a href="#contact" data-key="contact">Contact</a></li>
             </ul>
             <div>
@@ -61,11 +62,10 @@
     </div>
 
     <header id="home" class="hero">
+
         <h1 data-key="hero">Hi, I'm <span class="highlight" data-key="hero">Lukas Maximilian Kodalle</span></h1>
         <p data-key="hero">Aspiring Developer with Focus on AI | Love for Innovation | Creative Thinker</p>
         <a href="#projects" class="btn" data-key="hero" id="header-btn">My Projects</a>
-
-        <img src="wip.png" alt="WIP" class="wip-header">
 
     </header>
     <main>
@@ -230,18 +230,20 @@
                         </div>
                         <div class="project-card" data-project="appdata-analysis"
                             data-title-en="Analysing Data of Profitable Free Apps" data-title-de="Datenanalyse von gewinnbringenden Gratis-Apps"
-                            data-description-en="Currently working on. Coming Soon&#8482;"
-                            data-description-de="Momentan in Arbeit. Kommt bald&#8482;"
-                            data-images="" data-link="">
-                            <h3 data-key="project5">In Work: App Data Analysis</h3>
-                            <img src="./construction_wip.png" alt="App Data Analysis Thumbnail">
+                            data-description-en="In this project, I conducted an in-depth analysis of the App Store (iOS) and Google Play (Android) markets (ca. 15.000 apps) with the help of Python Code to identify profitable app profiles suitable for ad-based monetization. The focus was on free apps, as these are the most downloaded and widely used."
+                            data-description-de="In diesem Projekt habe ich eine umfassende Analyse der App Store (iOS) und Google Play (Android) Märkte (ca. 15.000 Apps) durchgeführt mit Hilfe von Python. Ziel war es, profitable App-Profile zu identifizieren, die sich für eine App-Entwicklung mit Werbefinanzierung eignen. Im Fokus standen kostenlose Apps, da diese am häufigsten heruntergeladen werden."
+                            data-images="./data_analysis/data_analysis_flowchart.png, ./data_analysis/ios.png, ./data_analysis/google.png, ./data_analysis/findings.png" 
+                            data-link="https://github.com/LMKCode/App-Data-Analysis">
+                            <h3 data-key="project5">App Data Analysis</h3>
+                            <img src="./data_analysis/data_analysis_thumb2.png" alt="App Data Analysis Thumbnail">
                         </div>
-                        <div class="project-card" data-project="ai-chatbot" data-title-en="AI Chatbot" data-title-de="KI Chatbot"
-                            data-description-en="Currently working on. Coming Soon&#8482;"
-                            data-description-de="Momentan in Arbeit. Kommt bald&#8482;"
-                            data-images="" data-link="">
-                            <h3 data-key="project6">In Work: AI Chatbot</h3>
-                            <img src="./construction_wip.png" alt="AI Chatbot Thumbnail">
+                        <div class="project-card" data-project="website-checker" data-title-en="Website Updates Checker Application" data-title-de="Webseiten Aktualisierungs-Überwacher Programm"
+                            data-description-en="This Python tool continuously monitors websites for changes and sends real-time notifications via Telegram. Featuring an intuitive graphical user interface (Tkinter), the monitoring process is easy to configure and manage. Functions like interval checks, system tray minimization, and configuration saving make it a practical solution for developers, content managers, and anyone who needs to keep an eye on website updates."
+                            data-description-de="Dieses Python-Tool überwacht gezielt Webseiten auf Änderungen und informiert in Echtzeit über Telegram. Dank grafischer Benutzeroberfläche (Tkinter) lässt sich das Monitoring bequem konfigurieren und steuern. Features wie Intervallprüfung, Tray-Minimierung und Konfigurationsspeicherung machen das Tool zu einem praktischen Helfer für Entwickler, Content-Manager und alle, die Webseiten zuverlässig im Blick behalten möchten."
+                            data-images="./website_checker/bild2.png, ./website_checker/bild3.png" 
+                            data-link="https://github.com/LMKCode/Website-Updates-Checker">
+                            <h3 data-key="project6">Website Updates Checker</h3>
+                            <img src="./website_checker/website_checker_thumb.png" alt="Website Checker Thumbnail">
                         </div>
                     </div>
                 </div>
@@ -275,6 +277,13 @@
                 </div>
         </section>
 
+        <section id="blog" class="blog">
+            <div class="box">
+                <h2 data-key="blog">My Blog</h2>
+                <img src="wip.png" alt="WIP" class="wip-logo">
+                <p data-key="blog">NEW WIP (14.05.2025): Upcoming Blog where I will write about the projects I'm currently working on. Frequent Updates planned.</p>
+            </div>
+        </section>
 
         <section id="contact" class="contact">
             <div class="box">
